@@ -9,6 +9,10 @@ $aErrores = [];
 if (isset($_POST["salir"])) {
     header("Location: ../DWES.php");
 }
+if (isset($_POST["registro"])) {
+    $vista = $vistas['registro'];
+    header("Location: index.php");
+}
 //si pulsamos el votor enviar del formulario nos ejecuta el programa y comprueba si se valida al usuario o no
 if (isset($_POST["enviar"])) {
     $aErrores["codUsuario"] = validacionFormularios::comprobarAlfaNumerico($_POST["usuario"], 250, 1, 1);
@@ -53,5 +57,7 @@ if (isset($_POST["enviar"])) {
      * si no  existe el usuario nos direcciona al login
      */
     $vista = $vistas["login"];
+   
     require_once $vistas["layout"];
 }
+ $_SESSION["DAW209Pagina"] = "login";

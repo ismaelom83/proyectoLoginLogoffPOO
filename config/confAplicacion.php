@@ -15,13 +15,15 @@ require_once 'model/DBPDO.php';
 
 $controladores = [
     'login' => 'controller/cLogin.php',
-    'inicio' => 'controller/cInicio.php'
+    'inicio' => 'controller/cInicio.php',
+    'registro' => 'controller/cRegistro.php'
 ];
 
 $vistas = [
     'layout' => 'view/Layout.php',
     'login' => 'view/vLogin.php',
-    'inicio' => 'view/vInicio.php'
+    'inicio' => 'view/vInicio.php',
+    'registro' => 'view/vRegistro.php'
 ];
 
 

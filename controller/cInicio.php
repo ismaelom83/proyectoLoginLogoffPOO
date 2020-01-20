@@ -27,6 +27,7 @@ if (isset($_REQUEST["salir"])) {
         $ultimaConexion = "La ultima vez que te conectaste fue el ".$_SESSION["DAW209POOusuario"]->getUltimaConexion();
   }
     $vista = $vistas['inicio']; 
+     $_SESSION["DAW209Pagina"] = "inicio";
     /**
      * requerimosa el layout de la vista
      */
