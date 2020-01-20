@@ -10,18 +10,21 @@ if (isset($_REQUEST["salir"])) {
 } else { //si no estaremos en el inicio
      
 //asignamos los valores de la sesion del usuario logeado en variables que mostraremos en la vista.
-    $perfil = $_SESSION["perfil"];
-    $descripcion = $_SESSION["descripcion"];
-    $accesos = $_SESSION['accesos'];
-   
+    //saludo inicial con la descripcion del usuario.
+    $saludoInicial = "Hola ". $_SESSION["DAW209POOusuario"]->getDescUsuario()." Bienvenido a la aplicacion LoginLogoffPOO de Ismael Heras";
+    //sacamos el perfil del usuario.
+    $perfil = "Tu perfil es (".$_SESSION["DAW209POOusuario"]->getPerfil().")"; 
    //if para diferenciar de la pprimera vez que te logeas y la ultima conexion
    //si te logeas por primera vez no tendras hora de ultima conexion.
-  if($accesos ==1){
+  
+  if($_SESSION["DAW209POOusuario"]->getContadorAccesos() == 0){
       $accesosT = "Esta es la primera vez que te logeas";
       $ultimaConexion = "";
   }else{
-       $accesosT = "Esta es la ".$accesos."º vez que te logeas";
-        $ultimaConexion = "La ultima vez que te conectaste fue el ".$_SESSION['ultimaconexion'];
+      //sumamos uno al contador de accesos de la sesion del usuario
+       $accesosT = "Esta es la ".($_SESSION["DAW209POOusuario"]->getContadorAccesos() +1 )."º vez que te logeas";
+       //hora de la ultima conexion si es la segunda vez como minimo que accedemos.
+        $ultimaConexion = "La ultima vez que te conectaste fue el ".$_SESSION["DAW209POOusuario"]->getUltimaConexion();
   }
     $vista = $vistas['inicio']; 
     /**

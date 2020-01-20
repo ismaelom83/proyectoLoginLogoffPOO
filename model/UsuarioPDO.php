@@ -47,9 +47,11 @@ class UsuarioPDO {
      * @param type $codUsuario
      */ 
     public static function registarUltimaConexion($codUsuario) {
+        $consulta1 = "UPDATE T01_Usuarios SET T01_FechaHoraUltimaConexion = " . time() . " WHERE T01_CodUsuario=?;";
+        BDPDO::ejecutarConsulta($consulta1, [$codUsuario]);
         //update a la base de datos para amuntar el numero de visitas
-            $consulta = "UPDATE T01_Usuarios SET T01_NumAccesos=T01_NumAccesos+1, T01_FechaHoraUltimaConexion=now() WHERE T01_CodUsuario=?";
-            DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
+            $consulta2 = "UPDATE T01_Usuarios SET T01_NumAccesos=T01_NumAccesos+1, T01_FechaHoraUltimaConexion=now() WHERE T01_CodUsuario=?";
+            DBPDO::ejecutaConsulta($consulta2, [$codUsuario]);
     }
 
 }
