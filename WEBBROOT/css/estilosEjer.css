@@ -11,6 +11,13 @@
 main{
     margin-bottom: 100px;
 }
+.diagrama{
+    font-size: 30px;
+   
+}
+.diagrama:link{
+     text-decoration: none;
+}
 h4{
     display: inline-block;
    float: left;

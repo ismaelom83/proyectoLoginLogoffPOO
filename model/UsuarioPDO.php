@@ -20,7 +20,6 @@
 include 'DBPDO.php';
 require_once 'Usuario.php';
 class UsuarioPDO {
-
     /**
      * funcion que valida usuarios y pide a la clase DBPDO el metodo ejecutarConsultas
      * 
@@ -29,14 +28,10 @@ class UsuarioPDO {
      * @return type devuelve un array con toos los valores de la base de datos del usuario
      */
     public static function validarUsuario($codUsuario, $password) {
-
         //creamos una consulta para saber el codigo del usuario y la contraseña
         $consulta = "select * from T01_Usuarios where T01_CodUsuario=? and T01_Password=?";
         //pedimos el metodo ejecutar consulta y la ejecutamos
         $resConsulta = DBPDO::ejecutaConsulta($consulta, [$codUsuario, $password]);
-
-         
-        
         //Si ahya algun resultado alamacenamos en el array todos los resultados.
         if ($resConsulta->rowCount() == 1) {
        $usuario =$resConsulta->fetchObject();
@@ -44,17 +39,14 @@ class UsuarioPDO {
        return $obUsuario;
         }else{
             return false;
-        }
-      
-    }
-    
+        }  
+    }    
     /**
      * funcion que aumenta en un valor cada vez que nos logeamos con ese usuario
      * 
      * @param type $codUsuario
-     */
-    
-    public static function contadorVisitas($codUsuario) {
+     */ 
+    public static function registarUltimaConexion($codUsuario) {
         //update a la base de datos para amuntar el numero de visitas
             $consulta = "UPDATE T01_Usuarios SET T01_NumAccesos=T01_NumAccesos+1, T01_FechaHoraUltimaConexion=now() WHERE T01_CodUsuario=?";
             DBPDO::ejecutaConsulta($consulta, [$codUsuario]);

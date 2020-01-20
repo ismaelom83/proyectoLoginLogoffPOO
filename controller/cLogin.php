@@ -26,7 +26,7 @@ if (isset($_POST["enviar"])) {
         $password = hash("SHA256", $codUsuario . $_POST["password"]);
         //alamacenamos en una variable el valor dde la consulta validar usuario
         $obUsuario = UsuarioPDO::validarUsuario($codUsuario, $password);
-        //si existe el usuario nos direcciona al index
+        //si exise a creado el objeto validamos al usuario y nos redirigimos al login.
         if (is_object($obUsuario)) {
             //asignamos la sesion del usuario a el usuario pasado por el formulario y logeado
             $_SESSION["DAW209POOusuario"] = $codUsuario;
@@ -34,7 +34,9 @@ if (isset($_POST["enviar"])) {
             $_SESSION["perfil"] = $obUsuario->getPerfil();
              $_SESSION["descripcion"] = $obUsuario->getDescUsuario();
              //llamamos a la funcion contador visitas para que nos añada una vistita en la base de datos en el usuario logeado.
-             UsuarioPDO::contadorVisitas($codUsuario);
+             UsuarioPDO::registarUltimaConexion
+                     
+                     ($codUsuario);
              $_SESSION['accesos'] = $obUsuario->getContadorAccesos()+1;
              //if para determinar que si ha habido mas de una conexion(no es la primera) establecemos una hora de ultima conexion.
              if($_SESSION['accesos'] >1){
@@ -43,7 +45,9 @@ if (isset($_POST["enviar"])) {
              
              //y por ultimo nos dirigimos al index.
             header("Location: index.php");
-        } else {
+                     
+                        
+
             /**
              * si no  existe el usuario nos direcciona al login
              */

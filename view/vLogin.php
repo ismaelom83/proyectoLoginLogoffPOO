@@ -19,3 +19,4 @@
 </div>                       
 <br/>
 <br/>   
+<a class="diagrama" href="DOC/GoF Design Patterns - Composite.vpd.pdf">Diagrama de clases</a>
