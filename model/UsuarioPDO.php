@@ -56,7 +56,7 @@ class UsuarioPDO {
     }
 
  public static function altaUsuario($codUsuario, $descUsuario, $password){
-        $consulta = "INSERT INTO T01_Usuarios(T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES(?,?,?);";
+        $consulta = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES(?,?,?);";
         BDPDO::ejecutarConsulta($consulta, [$codUsuario, $descUsuario, $password]);
         return self::validarUsuario($codUsuario, $password);
     }    

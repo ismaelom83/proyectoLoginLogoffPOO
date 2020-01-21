@@ -10,10 +10,10 @@ $aErrores = [];
 if (isset($_POST["salir"])) {
     header("Location: ../DWES.php");
 }
-//si pulsamos el boton salir nos saca de la aplicacion
+//si pulsamos el boton nos lleva  a la aplivacion.
 if (isset($_POST["registro"])) {
-    $_SESSION["pagina"] = "registro"; //Se guarda en la variable de sesión la ventana de registro
     header('Location: index.php'); //Se le redirige al index
+    $_SESSION["pagina"] = "registro"; //Se guarda en la variable de sesión la ventana de registro
     require_once $vistas["layout"]; //Se carga la vista correspondiente
     exit;
 }
@@ -44,8 +44,8 @@ if (isset($_POST["enviar"])) {
             header("Location: index.php");
             exit;
         } else {
-           $_SESSION["pagina"] = "login";
-    require_once $vistas["layout"];
+            $_SESSION["pagina"] = "login";
+            require_once $vistas["layout"];
         }
     } else {
         $vista = $vistas["login"];
