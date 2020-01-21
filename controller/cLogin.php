@@ -1,4 +1,5 @@
 <?php
+
 require_once 'model/Usuario.php';
 require_once 'model/UsuarioPDO.php';
 //variable para controlar el formulario
@@ -8,6 +9,13 @@ $aErrores = [];
 //si pulsamos el boton salir nos saca de la aplicacion
 if (isset($_POST["salir"])) {
     header("Location: ../DWES.php");
+}
+//si pulsamos el boton salir nos saca de la aplicacion
+if (isset($_POST["registro"])) {
+    $_SESSION["pagina"] = "registro"; //Se guarda en la variable de sesión la ventana de registro
+    header('Location: index.php'); //Se le redirige al index
+    require_once $vistas["layout"]; //Se carga la vista correspondiente
+    exit;
 }
 //si pulsamos el votor enviar del formulario nos ejecuta el programa y comprueba si se valida al usuario o no
 if (isset($_POST["enviar"])) {
@@ -27,32 +35,25 @@ if (isset($_POST["enviar"])) {
         //alamacenamos en una variable el valor dde la consulta validar usuario
         $obUsuario = UsuarioPDO::validarUsuario($codUsuario, $password);
         //si exise a creado el objeto validamos al usuario y nos redirigimos al login.
-        if (!is_null($obUsuario)) {
+        if (is_object($obUsuario)) {
             //asignamos la sesion del usuario a el objeto de la clase UsuarioPDO validado
-            $_SESSION["DAW209POOusuario"] = $obUsuario;      
-             //y por ultimo nos dirigimos al index.
+            $_SESSION["DAW209POOusuario"] = $obUsuario;
+            //guardamos en la sesion que estamos en la pagina de inicio
+            $_SESSION["pagina"] = "inicio";
+            //y por ultimo nos dirigimos al index.
             header("Location: index.php");
-                                          
-            /**
-             * si no  existe el usuario nos direcciona al login
-             */
-            $vista = $vistas["login"];
-            require_once $vistas["layout"];
+            exit;
+        } else {
+           $_SESSION["pagina"] = "login";
+    require_once $vistas["layout"];
         }
     } else {
-        /**
-         * si no  existe el usuario nos direcciona al login
-         */
         $vista = $vistas["login"];
         require_once $vistas["layout"];
     }
 } else {
-    /**
-     * si no  existe el usuario nos direcciona al login
-     */
     $vista = $vistas["login"];
     //metemos en la sesion en la pagina que estamos.
-   $_SESSION["pagina"] = "login"; 
+    $_SESSION["pagina"] = "login";
     require_once $vistas["layout"];
 }
- $_SESSION["DAW209Pagina"] = "login";

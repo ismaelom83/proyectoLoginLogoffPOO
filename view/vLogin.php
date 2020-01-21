@@ -12,7 +12,7 @@
             <div class="botones2">
                 <input type="submit" name="enviar"  value="enviar" class="form-control  btn btn-primary mb-1">
                 <br><br>
-                  <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><input type="button" name="registro" value="Registrarse"></a>   
+                  <input type="submit" name="registro" value="Registrarse">  
                 <br><br>
                  <input type="submit" name="salir"  value="salir" class="form-control  btn btn-danger mb-1">
 

@@ -13,24 +13,14 @@ session_start();
 //si la sesion a sido iniciada entra en el index
 if(isset($_SESSION['DAW209POOusuario'])){
    
-    if(isset($_GET['pagina'])){
-        
-        echo $_GET['pagina'];
-        /**
-         * si hay una pagina la carga
-         */
-        include_once $controladores[$_GET['pagina']];  
-    } else {
-        /**
-         * si no nos dirige al inicio
-         */
-        include_once $controladores["inicio"]; 
-    }  
+    if($_SESSION["pagina"] == "inicio"){       
+        include_once $controladores["inicio"];  
+    } 
 }else {
-    /**
-     * si no valida la entrada volvemos al login
-     * 
-     */
-    
-    include_once $controladores["login"];
+   if( isset($_SESSION["pagina"]) && $_SESSION["pagina"] == "registro"){
+       $vista = $vistas["registro"];
+       include_once $vistas["layout"]; 
+   }
+    $vista = $vistas["login"];
+   include_once $controladores["login"]; 
 }
