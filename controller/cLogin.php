@@ -9,10 +9,6 @@ $aErrores = [];
 if (isset($_POST["salir"])) {
     header("Location: ../DWES.php");
 }
-if (isset($_POST["registro"])) {
-    $vista = $vistas['registro'];
-    header("Location: index.php");
-}
 //si pulsamos el votor enviar del formulario nos ejecuta el programa y comprueba si se valida al usuario o no
 if (isset($_POST["enviar"])) {
     $aErrores["codUsuario"] = validacionFormularios::comprobarAlfaNumerico($_POST["usuario"], 250, 1, 1);
@@ -34,8 +30,6 @@ if (isset($_POST["enviar"])) {
         if (!is_null($obUsuario)) {
             //asignamos la sesion del usuario a el objeto de la clase UsuarioPDO validado
             $_SESSION["DAW209POOusuario"] = $obUsuario;      
-             //llamamos a la funcion registarUltimaConexion para que nos añada una vistita en la base de datos en el usuario logeado.
-             UsuarioPDO::registarUltimaConexion($codUsuario);
              //y por ultimo nos dirigimos al index.
             header("Location: index.php");
                                           

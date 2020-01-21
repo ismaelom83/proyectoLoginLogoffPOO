@@ -10,8 +10,6 @@ require_once './config/confDB.php';
 session_start();
 
 
-
-
 //si la sesion a sido iniciada entra en el index
 if(isset($_SESSION['DAW209POOusuario'])){
    
