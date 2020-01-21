@@ -51,7 +51,8 @@ if (isset($_POST["enviar"])) {
      * si no  existe el usuario nos direcciona al login
      */
     $vista = $vistas["login"];
-   
+    //metemos en la sesion en la pagina que estamos.
+   $_SESSION["pagina"] = "login"; 
     require_once $vistas["layout"];
 }
  $_SESSION["DAW209Pagina"] = "login";

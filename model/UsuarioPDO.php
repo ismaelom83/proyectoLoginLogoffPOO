@@ -37,7 +37,7 @@ class UsuarioPDO {
              //update a la base de datos para amuntar el numero de visitas antes de crear ekl objeto
             $consulta = "UPDATE T01_Usuarios SET T01_NumAccesos=T01_NumAccesos+1, T01_FechaHoraUltimaConexion=now() WHERE T01_CodUsuario=?";
             DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
-            //creamos el objeto usuario
+            //creamos el objeto usuario despues de haber actualizado la base de datos.
        $usuario =$resConsulta->fetchObject();
        $obUsuario = new Usuario($usuario->T01_CodUsuario,$usuario->T01_DescUsuario,$usuario->T01_Password,$usuario->T01_Perfil,$usuario->T01_FechaHoraUltimaConexion,$usuario->T01_NumAccesos);
        return $obUsuario;

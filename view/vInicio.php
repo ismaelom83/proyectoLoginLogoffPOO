@@ -1,5 +1,4 @@
 
-
 <p> <?php echo $saludoInicial ?></p>
 <p><?php echo $perfil?></p>
 <p><?php echo $accesosT?></p>
@@ -9,5 +8,3 @@
     <input type="submit" class="btn btn-danger" value="Cerrar Sesion" name="salir">
     <br>
 </form>
-
-
