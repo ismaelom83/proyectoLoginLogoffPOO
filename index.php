@@ -11,16 +11,14 @@ session_start();
 
 
 //si la sesion a sido iniciada entra en el index
-if(isset($_SESSION['DAW209POOusuario'])){
-    
-    if($_SESSION["pagina"] == "inicio"){       
-        include_once $controladores["inicio"];  
-    } 
-}else {
-   if( isset($_SESSION["pagina"]) && $_SESSION["pagina"] == "registro"){
-       $vista = $vistas["registro"];
-       include_once $controladores["registro"]; 
-   }
+if (isset($_SESSION['DAW209POOusuario'])) {
+//y si la pagina es igual a inicio carga el controlador de inicio
+    if ($_SESSION["pagina"] == "inicio") {
+        include_once $controladores["inicio"];
+    }
+} else if (isset($_SESSION["pagina"]) && $_SESSION["pagina"] == "registro") {
+    include_once $controladores["registro"];
+} else {
     $vista = $vistas["login"];
-   include_once $controladores["login"]; 
+    include_once $controladores["login"];
 }

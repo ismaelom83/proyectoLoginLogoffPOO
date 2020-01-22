@@ -6,11 +6,8 @@ require_once 'model/UsuarioPDO.php';
 $entradaOK = true;
 //Array de los errores
 $aErrores = [];
-//si pulsamos el boton salir nos saca de la aplicacion
-if (isset($_POST["salir"])) {
-    header("Location: ../DWES.php");
-}
-//si pulsamos el boton nos lleva  a la aplivacion.
+
+//si pulsamos el boton nos lleva  al registro.
 if (isset($_POST["registro"])) {
     header('Location: index.php'); //Se le redirige al index
     $_SESSION["pagina"] = "registro"; //Se guarda en la variable de sesión la ventana de registro

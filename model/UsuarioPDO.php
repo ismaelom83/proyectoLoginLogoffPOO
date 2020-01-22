@@ -48,7 +48,7 @@ class UsuarioPDO {
     
      public static function validarCodNoExiste($codUsuario){
         $consulta = "SELECT T01_CodUsuario FROM T01_Usuarios WHERE T01_CodUsuario=?;";
-        $resultadoConsulta = BDPDO::ejecutarConsulta($consulta, [$codUsuario]);
+        $resultadoConsulta = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
          if($resultadoConsulta->rowCount() == 1){
              return true;
          }
@@ -57,7 +57,7 @@ class UsuarioPDO {
 
  public static function altaUsuario($codUsuario, $descUsuario, $password){
         $consulta = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES(?,?,?);";
-        BDPDO::ejecutarConsulta($consulta, [$codUsuario, $descUsuario, $password]);
+        DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descUsuario, $password]);
         return self::validarUsuario($codUsuario, $password);
     }    
   

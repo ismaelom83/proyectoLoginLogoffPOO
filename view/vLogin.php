@@ -12,9 +12,9 @@
             <div class="botones2">
                 <input type="submit" name="enviar"  value="IniciarSesion" class="form-control  btn btn-primary mb-1">
                 <br><br>
-                  <input type="submit" name="registro" value="Registrarse">  
+                  <input type="submit" name="registro" value="Registrarse" class="form-control  btn btn-success mb-1">  
                 <br><br>
-                 <input type="submit" name="salir"  value="salir" class="form-control  btn btn-danger mb-1">
+                 
 
               
             </div>

@@ -17,7 +17,7 @@
         T01_DescUsuario varchar(250) NOT null,
         T01_Password varchar(64) NOT null,
         T01_Perfil enum('administrador', 'usuario') default 'usuario',
-        T01_NumAccesos integer(11),
+        T01_NumAccesos integer(11) default 0,
         T01_FechaHoraUltimaConexion timestamp 
     );
 

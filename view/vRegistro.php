@@ -1,5 +1,6 @@
 
 <div class="wrap">
+    <h1>Registro</h1>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
             <div class="obligatorio">
@@ -42,7 +43,7 @@
                 </div>   
             <?php } ?> 
             <br>
-            <label class="label2" for="password2">Password</label>
+            <label class="label2" for="password2">Vuelva a introducir Password</label>
             <input type="text" name="password2" id="password" class="form-control" placeholder="Inserta Password" value="<?php
             if (isset($_POST['password2']) && is_null($aErrores['password2'])) { //comprobamos si ha introducido algo en el campo y que el array de errores este a null
                 echo $_POST['password2']; //aunque se muestre un campo mal el valor si es correcto se mantiene.
@@ -55,7 +56,7 @@
             <?php } ?> 
             <br>
             <div class="botones2">
-                <input type="submit" name="altaUsuarios" value="AñadirRegistro" class="form-control  btn btn-secondary mb-1">
+                <input type="submit" name="altaUsuarios" value="AñadirRegistro" class="form-control  btn btn-success mb-1">
                 <br>
                 <br>
                 <input type="submit" name="VolverLogin" value="VolverLogin" class="form-control  btn btn-secondary mb-1">
