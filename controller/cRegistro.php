@@ -8,6 +8,14 @@ $aErrores = [
     'password1' => null,
     'password2' => null
 ];
+//si pulsamos cerrar sesion destruye la sesion y nos lleva al inicio.
+if (isset($_POST["cerrarSesion"])) {
+  //destruye la sesion del usuario
+    unset($_SESSION['DAW209POOusuario']);
+     unset($_SESSION['pagina']);
+    header('Location: index.html'); //nos redirige al login
+    die();//con die() terminamos inmediatamente la ejecución del script, evitando que se envíe más salida al cliente.
+}
 //si pulsamos el boton salir nos saca de la aplicacion
 if (isset($_POST["VolverLogin"])) {
     header("Location: index.php");

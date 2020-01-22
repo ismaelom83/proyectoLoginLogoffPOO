@@ -13,14 +13,10 @@
                 <input type="submit" name="enviar"  value="IniciarSesion" class="form-control  btn btn-primary mb-1">
                 <br><br>
                   <input type="submit" name="registro" value="Registrarse" class="form-control  btn btn-success mb-1">  
-                <br><br>
-                 
-
-              
+                <br><br>             
             </div>
         </fieldset>
     </form>
 </div>                       
 <br/>
 <br/>   
-<a class="diagrama" href="DOC/GoF Design Patterns - Composite.vpd.pdf">Diagrama de clases</a>

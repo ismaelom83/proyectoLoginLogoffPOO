@@ -2,21 +2,22 @@
 require_once 'model/Usuario.php';
 require_once 'model/UsuarioPDO.php';
 //si pulsamos salir nos saca del incio y nos lleva de nuevo al login
-if (isset($_REQUEST["salir"])) {
+if (isset($_REQUEST["cerrarSesion"])) {
     //destruye la sesion del usuario
     unset($_SESSION['DAW209POOusuario']);
+    unset($_SESSION['pagina']);
     //nos dirige al login
-    header("location: index.php");
+    header("location: index.html");
 } else { //si no estaremos en el inicio
      
 //asignamos los valores de la sesion del usuario logeado en variables que mostraremos en la vista.
     //saludo inicial con la descripcion del usuario.
     $saludoInicial = "Hola ". $_SESSION["DAW209POOusuario"]->getDescUsuario()." Bienvenido a la aplicacion LoginLogoffPOO de Ismael Heras";
-    //sacamos el perfil del usuario.
-    $perfil = "Tu perfil es (".$_SESSION["DAW209POOusuario"]->getPerfil().")"; 
+    //sacamos el perfil del usuario y damos acceso alas funcionalidades de cada rol.
+    $perfil = $_SESSION["DAW209POOusuario"]->getPerfil(); 
+    
    //if para diferenciar de la pprimera vez que te logeas y la ultima conexion
    //si te logeas por primera vez no tendras hora de ultima conexion.
-  
   if($_SESSION["DAW209POOusuario"]->getContadorAccesos() == 0){
       $accesosT = "Esta es la primera vez que te logeas";
       $ultimaConexion = "";

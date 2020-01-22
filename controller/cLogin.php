@@ -7,6 +7,13 @@ $entradaOK = true;
 //Array de los errores
 $aErrores = [];
 
+//si pulsamos cerrar sesion destruye la sesion y nos lleva al inicio.
+if (isset($_POST["cerrarSesion"])) {
+  //destruye la sesion del usuario
+    unset($_SESSION['DAW209POOusuario']);
+    header('Location: index.html'); //nos redirige al login
+    die();//con die() terminamos inmediatamente la ejecución del script, evitando que se envíe más salida al cliente.
+}
 //si pulsamos el boton nos lleva  al registro.
 if (isset($_POST["registro"])) {
     header('Location: index.php'); //Se le redirige al index

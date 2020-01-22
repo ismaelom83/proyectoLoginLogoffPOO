@@ -17,6 +17,7 @@ $controladores = [
     'login' => 'controller/cLogin.php',
     'inicio' => 'controller/cInicio.php',
     'registro' => 'controller/cRegistro.php',
+    'borrarCuenta' => 'controller/cBorrarCuenta.php',
 ];
 
 $vistas = [
@@ -24,6 +25,7 @@ $vistas = [
     'login' => 'view/vLogin.php',
     'inicio' => 'view/vInicio.php',
     'registro' => 'view/vRegistro.php',
+    'borrarCuenta' => 'view/vBorrarCuenta.php',
 ];
 
 
