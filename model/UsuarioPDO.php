@@ -45,17 +45,32 @@ class UsuarioPDO {
             return false;
         }  
     }
+    /**
+     * 
+     * @param type $codUsuario
+     * @return boolean
+     */
     
      public static function validarCodNoExiste($codUsuario){
+         //consulta SQL para saber el usuario 
         $consulta = "SELECT T01_CodUsuario FROM T01_Usuarios WHERE T01_CodUsuario=?;";
+        //se alamacena en una variable el resultado de la consulta.
         $resultadoConsulta = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
+        //si existe una consulta devuelve un valor verdadero
          if($resultadoConsulta->rowCount() == 1){
              return true;
          }
         return false;
     }
-
+/**
+ * 
+ * @param type $codUsuario
+ * @param type $descUsuario
+ * @param type $password
+ * @return type
+ */
  public static function altaUsuario($codUsuario, $descUsuario, $password){
+     //insertamos en la base de datos un nuevo registro con los valores predeterminados.
         $consulta = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES(?,?,?);";
         DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descUsuario, $password]);
         return self::validarUsuario($codUsuario, $password);

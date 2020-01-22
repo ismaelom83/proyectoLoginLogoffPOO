@@ -42,10 +42,14 @@ if (isset($_POST['altaUsuarios'])) {
                 $_SESSION['pagina'] = "registro";
                 require_once $vistas["layout"];
             } else {
-                $objetoUsuario = UsuarioPDO::altaUsuario($codUsuario, $descUsuario, $password); //Comprobar que el usuario existe en la base de datos
+                //crea el usuario llamando al metodo altaUsuario.
+                $objetoUsuario = UsuarioPDO::altaUsuario($codUsuario, $descUsuario, $password);
+                //metemos en la sesion el objeto creado.
                 $_SESSION["DAW209POOusuario"] = $objetoUsuario;
+                //y guardamos en la sesion pagina el inicio para que carge el inicio el index.
                 $_SESSION['pagina'] = "inicio";
-                header("Location: index.php"); //Volvemos a cargar el indx ahora que tenemos un usuario en la sesión
+                //nos dirigimos a al index que cargara el inicio con la sesion del usuario.
+                header("Location: index.php"); 
                 exit;
             }
             //si la password esta repetida muestra un error y recarga registro.
@@ -55,7 +59,7 @@ if (isset($_POST['altaUsuarios'])) {
             $_SESSION['pagina'] = "registro";
             require_once $vistas["layout"];
         }
-        //si esta vacia recarga y muestra error y caega la pagina.
+        //si al pulsar el boton registro esta vacia recarga y muestra error y caega la pagina.
     }else{
         $vista = $vistas["registro"];
     $_SESSION['pagina'] = "registro";
