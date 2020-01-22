@@ -32,9 +32,11 @@ if (isset($_POST['altaUsuarios'])) {
         $descUsuario = $_POST['DescUsuario'];
         $password = $_POST['password1'];
         $password2 = $_POST['password2'];
+        
+        //control para saber si las password son iguales.
         if ($password === $password2) {
-            $password = hash('sha256', $_POST['CodUsuario'] . $_POST['password1']); //Guardar la contraseña ya resumida
-            if (UsuarioPDO::validarCodNoExiste($codUsuario)) { //Si el codigo ya está en uso, muestra un mensaje de error
+            //si ya existe el usuario muestra un error y recarga el registro
+            if (UsuarioPDO::validarCodNoExiste($codUsuario)) { 
                 $aErrores['CodUsuario'] = "duplicado de clave primaria";
                 $vista = $vistas["registro"];
                 $_SESSION['pagina'] = "registro";
@@ -46,17 +48,20 @@ if (isset($_POST['altaUsuarios'])) {
                 header("Location: index.php"); //Volvemos a cargar el indx ahora que tenemos un usuario en la sesión
                 exit;
             }
+            //si la password esta repetida muestra un error y recarga registro.
         } else {
             $aErrores['password2'] = "Las contraseñas no coinciden";
             $vista = $vistas["registro"];
             $_SESSION['pagina'] = "registro";
             require_once $vistas["layout"];
         }
+        //si esta vacia recarga y muestra error y caega la pagina.
     }else{
         $vista = $vistas["registro"];
     $_SESSION['pagina'] = "registro";
     require_once $vistas["layout"];
     }
+    //por defecto si no pulsamos el boton de registro nos carga el registro.
 } else {
 
     $vista = $vistas["registro"];
