@@ -50,8 +50,10 @@ if (isset($_POST['altaUsuarios'])) {
                 $_SESSION['pagina'] = "registro";
                 require_once $vistas["layout"];
             } else {
+                $accesos = 0;
+                $generar_password = hash('sha256', $codUsuario . $password);
                 //crea el usuario llamando al metodo altaUsuario.
-                $objetoUsuario = UsuarioPDO::altaUsuario($codUsuario, $descUsuario, $password);
+                $objetoUsuario = UsuarioPDO::altaUsuario($codUsuario, $descUsuario, $generar_password,$accesos);
                 //metemos en la sesion el objeto creado.
                 $_SESSION["DAW209POOusuario"] = $objetoUsuario;
                 //y guardamos en la sesion pagina el inicio para que carge el inicio el index.

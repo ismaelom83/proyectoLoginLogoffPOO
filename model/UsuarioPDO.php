@@ -69,10 +69,11 @@ class UsuarioPDO {
  * @param type $password
  * @return type
  */
- public static function altaUsuario($codUsuario, $descUsuario, $password){
+ public static function altaUsuario($codUsuario, $descUsuario, $password,$accesos){
      //insertamos en la base de datos un nuevo registro con los valores predeterminados.
-        $consulta = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES(?,?,?);";
-        DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descUsuario, $password]);
+     
+        $consulta = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_DescUsuario, T01_Password,T01_NumAccesos) VALUES(?,?,?,?);";
+        DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descUsuario, $password,$accesos]);
         return self::validarUsuario($codUsuario, $password);
     } 
     

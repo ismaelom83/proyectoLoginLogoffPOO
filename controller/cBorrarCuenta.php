@@ -10,18 +10,10 @@ if (isset($_REQUEST["cerrarSesion"])) {
     //nos dirige al login
     header("location: index.html");
 }
-if (isset($_REQUEST["cancelar"])) {
-    
-   
-    $_SESSION["DAW209POOusuario"];
-    
-    $_SESSION["DAW209Pagina"] = "inicio";
-    /**
-     * requerimosa el layout de la vista
-     */
-    $vista = $vistas['inicio'];
-    require_once $vistas['layout'];
-     header("location: index.php");
+if (isset($_POST["cancelar"])) {
+  header('Location: index.php'); //Se le redirige al index
+    $_SESSION["pagina"] = "registro"; //Se guarda en la variable de sesión la ventana de registro
+    require_once $vistas["layout"]; //Se carga la vista correspondiente
 }
 
 if (isset($_REQUEST["eliminarCuenta"])) {
