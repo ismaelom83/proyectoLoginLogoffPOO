@@ -74,7 +74,13 @@ class UsuarioPDO {
         $consulta = "INSERT INTO T01_Usuarios (T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES(?,?,?);";
         DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descUsuario, $password]);
         return self::validarUsuario($codUsuario, $password);
-    }    
+    } 
+    
+    public static function borrarUsuario($codUsuario){ 
+      $codUsuario =  $_SESSION['DAW209POOusuario']->getCodUsuario();
+        $consulta = "DELETE FROM T01_Usuarios WHERE T01_CodUsuario LIKE '" . $codUsuario . "' ";
+        DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
+    }
   
 
 }

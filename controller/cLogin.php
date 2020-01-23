@@ -21,6 +21,7 @@ if (isset($_POST["registro"])) {
     require_once $vistas["layout"]; //Se carga la vista correspondiente
     exit;
 }
+
 //si pulsamos el boton enviar del formulario nos ejecuta el programa y comprueba si se valida al usuario o no
 if (isset($_POST["enviar"])) {
     $aErrores["codUsuario"] = validacionFormularios::comprobarAlfaNumerico($_POST["usuario"], 250, 1, 1);
