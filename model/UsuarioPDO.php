@@ -77,10 +77,21 @@ class UsuarioPDO {
         return self::validarUsuario($codUsuario, $password);
     } 
     
+    /**
+     * 
+     * @param type $codUsuario
+     */
     public static function borrarUsuario($codUsuario){ 
-      $codUsuario =  $_SESSION['DAW209POOusuario']->getCodUsuario();
-        $consulta = "DELETE FROM T01_Usuarios WHERE T01_CodUsuario LIKE '" . $codUsuario . "' ";
+        $consulta = "DELETE FROM T01_Usuarios WHERE T01_CodUsuario LIKE ? ";
         DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
+    }
+    
+    public static function modificarUsuario($descUsuario,$codUsuario){
+        $consulta = "UPDATE T01_Usuarios SET T01_DescUsuario = ? WHERE T01_CodUsuario = ?;";
+        DBPDO::ejecutaConsulta($consulta, [$descUsuario, $codUsuario]);   
+        $objetoUsuario = new Usuario($codUsuario,$descUsuario,$_SESSION['DAW209POOusuario']->getPassword(), $_SESSION['DAW209POOusuario']->getPerfil(), $_SESSION['DAW209POOusuario']->getUltimaConexion(),$_SESSION['DAW209POOusuario']->getContadorAccesos());
+
+        return $objetoUsuario;
     }
   
 

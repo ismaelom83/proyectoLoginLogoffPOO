@@ -6,13 +6,13 @@
     <br>
  <?php if ($perfil == "usuario") { ?>
        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-           <input type="submit" class="btn btn-danger" value="EditarPerfil" name="editarPerfil">
-            <input type="submit" class="btn btn-danger" value="BorrarCuenta" name="borrarCuenta">
+           <input type="submit" class="btn btn-secondary" value="EditarPerfil" name="editarPerfil">
+            <input type="submit" class="btn btn-secondary" value="BorrarCuenta" name="borrarCuenta">
         </form>
     <?php } ?> 
      <?php if ($perfil == "administrador") { ?>
        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-           <input type="submit" class="btn btn-danger" value="MantenimientoUsuarios" name="mantenimientoUsuarios">
+           <input type="submit" class="btn btn-secondary" value="MantenimientoUsuarios" name="editarMiUsuario">
         </form>
     <?php } ?> 
 </div>

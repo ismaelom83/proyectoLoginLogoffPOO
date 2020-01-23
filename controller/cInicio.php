@@ -9,6 +9,14 @@ if (isset($_POST["borrarCuenta"])) {
     require_once $vistas["layout"]; //Se carga la vista correspondiente
     exit;
 }
+//si pulsamos el boton nos lleva  al registro.
+if (isset($_POST["editarPerfil"])) {
+    $_SESSION['DAW209POOusuario'];
+    header('Location: index.php'); //Se le redirige al index
+    $_SESSION["pagina"] = "miCuenta"; //Se guarda en la variable de sesión la ventana de registro
+    require_once $vistas["layout"]; //Se carga la vista correspondiente
+    exit;
+}
 //si pulsamos salir nos saca del incio y nos lleva de nuevo al login
 if (isset($_REQUEST["cerrarSesion"])) {
     //destruye la sesion del usuario
@@ -20,7 +28,7 @@ if (isset($_REQUEST["cerrarSesion"])) {
      
 //asignamos los valores de la sesion del usuario logeado en variables que mostraremos en la vista.
     //saludo inicial con la descripcion del usuario.
-    $saludoInicial = "Hola ". $_SESSION["DAW209POOusuario"]->getDescUsuario()." Bienvenido a la aplicacion LoginLogoffPOO de Ismael Heras";
+    $saludoInicial = "Hola ". $_SESSION["DAW209POOusuario"]->getDescUsuario()." Bienvenido a la aplicacion LoginLogoffPOO";
     //sacamos el perfil del usuario y damos acceso alas funcionalidades de cada rol.
     $perfil = $_SESSION["DAW209POOusuario"]->getPerfil(); 
     
