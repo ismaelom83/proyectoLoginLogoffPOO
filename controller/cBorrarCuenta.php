@@ -10,13 +10,26 @@ if (isset($_REQUEST["cerrarSesion"])) {
     //nos dirige al login
     header("location: index.html");
 }
+if (isset($_REQUEST["cancelar"])) {
+    
+   
+    $_SESSION["DAW209POOusuario"];
+    
+    $_SESSION["DAW209Pagina"] = "inicio";
+    /**
+     * requerimosa el layout de la vista
+     */
+    $vista = $vistas['inicio'];
+    require_once $vistas['layout'];
+     header("location: index.php");
+}
 
 if (isset($_REQUEST["eliminarCuenta"])) {
-    
+
     $codUsuario = $_SESSION['DAW209POOusuario']->getCodUsuario();
     UsuarioPDO::borrarUsuario($codUsuario);
-    
-  //destruye la sesion del usuario
+
+    //destruye la sesion del usuario
     unset($_SESSION['DAW209POOusuario']);
     unset($_SESSION['pagina']);
     //nos dirige al login
