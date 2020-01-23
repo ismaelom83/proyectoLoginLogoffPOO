@@ -12,7 +12,9 @@
             <div class="botones2">
                 <input type="submit" name="enviar"  value="IniciarSesion" class="form-control  btn btn-primary mb-1">
                 <br><br>
-                  <input type="submit" name="registro" value="Registrarse" class="form-control  btn btn-success mb-1">  
+                  <input type="submit" name="registro" value="Registrarse" class="form-control  btn btn-success mb-1"> 
+                  <input type="checkbox" id="check">
+                  <label for="check">Recordar Usuario</label>
                 <br><br>             
             </div>
         </fieldset>
