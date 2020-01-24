@@ -10,7 +10,7 @@
             <input type="text" name="password" id="password" class="form-control" placeholder="Introduce Password:" value="">                       
             <br>
             <div class="botones2">
-                <input type="submit" name="enviar"  value="IniciarSesion" class="form-control  btn btn-secondary mb-1">
+                <input type="submit" name="enviar" id="enviar"  value="IniciarSesion" class="form-control  btn btn-secondary mb-1">
                 <br><br>
                   <input type="submit" name="registro" value="Registrarse" class="form-control  btn btn-secondary mb-1"> 
                   <input type="checkbox" id="check">

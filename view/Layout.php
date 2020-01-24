@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="WEBBROOT/css/estilosHTML2.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="WEBBROOT/js/storage.js">
+        <script src="WEBBROOT/js/storage.js"></script>
         <title>Document</title>
     </head>
 
@@ -35,12 +35,12 @@
         </main>
         <aside>
             <form class="form3" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-                <input type="submit"  value="Cerrar Sesion" name="cerrarSesion" id="cerrarSesion1">
+                <input type="submit"  value="CerrarSesion/Salir" name="cerrarSesion" id="cerrarSesion1">
             </form>
             <ul>
                 <li> <a href="DOC/tecnologiasyherramientas.pdf">Tecnologias y herramientas</a></li>
                 <li> <a href="WEBBROOT/img/estructuraalmacenamiento.png">Estructura de almacenamiento</a></li>
-                <li> <a href="DOC/datos.pdf">Modelo FisicoDe Datos</a></li>
+                <li> <a href="DOC/datos.pdf">Modelo Fisico De Datos</a></li>
             </ul>
         </aside>
         <footer>

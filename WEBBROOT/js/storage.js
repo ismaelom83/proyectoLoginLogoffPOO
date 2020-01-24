@@ -1,4 +1,5 @@
 // evento boton enviar un evento cuando recordar 
+
 function storage1(){
     var chx = document.getElementById("check").checked;
  
@@ -11,6 +12,7 @@ function storage1(){
 
 function cargar(){ 
     var sesion1 = localStorage.getItem("key");
+    console.log(sesion1);  
   if(sesion1){
       document.getElementById("usuario").value=sesion1;
   }
@@ -19,6 +21,7 @@ function cargar(){
  
  //tengo storage
  //si tengo escribnelo en el input
+ 
 };
 
 
