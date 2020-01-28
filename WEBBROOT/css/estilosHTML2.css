@@ -16,20 +16,19 @@ nav{
     position: sticky;
     top: 0px;
     width: 10%;
-    height: 100vh;
+    height: 80vh;
     float: left;
 }
 
 ul{
-
     list-style: none;
 }
 
 ul li{ 
     text-decoration: none;
     padding: 5px;
-    margin-top: 40px;
-    margin-bottom:35px;
+    margin-top: 20px;
+    margin-bottom:15px;
     text-align: center;
 }
 
@@ -68,7 +67,7 @@ main{
     background-size: cover;
     background-position: center;
     transition: all .1s ease-in-out;
-    background-image: url('../img/banner-1.jpg');
+    background-image: url('../img/diagrama.png');
     animation: banner 16s infinite linear;
 }
 
@@ -143,7 +142,7 @@ aside{
     top: 0px;
     width: 10%;
     float: right;
-    height: 100vh;
+    height: 80vh;
 }
 
 
@@ -175,10 +174,12 @@ footer{
 /*      pagians secundarias       */
 
 
-.form3{
-    
+.form3{  
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 20px;
+}
+.form3 input{  
+  width: 80%;
 }
 #cerrarSesion1{
   color: red;

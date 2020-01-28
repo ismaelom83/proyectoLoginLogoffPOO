@@ -18,10 +18,9 @@
             <ul>
                 <li><a href="../../../index.php">HOME</a></li>
                 <li><a href="DOC/loginphpdocumentor/index.html">PHP Doc</a></li>
-                <li><a href="DOC/GoF Design Patterns - Composite.vpd.pdf">Diagrama Clases</a></li>
+                <li><a href="WEBBROOT/img/diagrama.png">Diagrama Clases</a></li>
                 <li><a href="DOC/200113CatalogoDeRequisitos.pdf">Catalogo De Requisitos</a></li>
                 <li><a href="DOC/casosdeuso.png">Casos De Uso</a></li>
-                <li><a href="WEBBROOT/img/navegacion.png">Arbol De Navegacion</a></li>
             </ul>
         </nav>
         <main>
@@ -38,9 +37,9 @@
                 <input type="submit"  value="CerrarSesion/Salir" name="cerrarSesion" id="cerrarSesion1">
             </form>
             <ul>
-                <li> <a href="DOC/tecnologiasyherramientas.pdf">Tecnologias y herramientas</a></li>
                 <li> <a href="WEBBROOT/img/estructuraalmacenamiento.png">Estructura de almacenamiento</a></li>
                 <li> <a href="DOC/datos.pdf">Modelo Fisico De Datos</a></li>
+                  <li><a href="WEBBROOT/img/navegacion.png">Arbol De Navegacion</a></li>
             </ul>
         </aside>
         <footer>
@@ -49,6 +48,7 @@
                     <img  src="WEBBROOT/img/gitLab.png" alt="GitLab"></a>
                 <a href="https://github.com/ismaelom83/proyectoLoginLogoffPOO" target="_blank" ><img  src="WEBBROOT/img/gitHub.png" alt="GitHub"></a>
                 <a href="https://www.zara.com/es/" target="_blank">pagina Imitada</a>
+                 <a href="DOC/191013-indice-heraclio-tema2.pdf" target="_blank">Tecnologias y herramientas</a>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
