@@ -12,7 +12,7 @@ session_start();
 
 //si tenemos esesion entra en la estructura de control.
 if (isset($_SESSION['DAW209POOusuario'])) {
-//y si la pagina es igual a inicio carga el controlador de inicio
+//y si la pagina es igual a inicio carga el controlador de inicio.
     if ($_SESSION["pagina"] == "inicio") {
         include_once $controladores["inicio"];
     }
