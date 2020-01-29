@@ -39,7 +39,7 @@
             <ul>
                 <li> <a href="WEBBROOT/img/estructuraalmacenamiento.png">Estructura de almacenamiento</a></li>
                 <li> <a href="DOC/datos.pdf">Modelo Fisico De Datos</a></li>
-                  <li><a href="WEBBROOT/img/navegacion.png">Arbol De Navegacion</a></li>
+                <li><a href="WEBBROOT/img/ARBOLMIO.PNG">Arbol De Navegacion</a></li>
             </ul>
         </aside>
         <footer>
