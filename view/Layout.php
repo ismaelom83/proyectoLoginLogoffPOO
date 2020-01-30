@@ -15,6 +15,7 @@
 
     <body>
         <nav>
+            <?php if (!isset($_SESSION['DAW209POOusuario'])) { ?>
             <ul>
                 <li><a href="../../../index.php">HOME</a></li>
                 <li><a href="DOC/loginphpdocumentor/index.html">PHP Doc</a></li>
@@ -22,6 +23,7 @@
                 <li><a href="DOC/200113CatalogoDeRequisitos.pdf">Catalogo De Requisitos</a></li>
                 <li><a href="DOC/casosdeuso.png">Casos De Uso</a></li>
             </ul>
+             <?php } ?> 
         </nav>
         <main>
             <section class="banner">
@@ -36,11 +38,13 @@
             <form class="form3" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                 <input type="submit"  value="CerrarSesion/Salir" name="cerrarSesion" id="cerrarSesion1">
             </form>
+            <?php if (!isset($_SESSION['DAW209POOusuario'])) { ?>
             <ul>
                 <li> <a href="WEBBROOT/img/estructuraalmacenamiento.png">Estructura de almacenamiento</a></li>
                 <li> <a href="DOC/datos.pdf">Modelo Fisico De Datos</a></li>
                 <li><a href="WEBBROOT/img/ARBOLMIO.PNG">Arbol De Navegacion</a></li>
             </ul>
+            <?php } ?> 
         </aside>
         <footer>
             <div class="footer-img"> <a href="../../../index.php">© 2020 Copyright: Ismael Heras Salvador</a> 
